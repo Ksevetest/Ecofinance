@@ -1,16 +1,16 @@
 package pages;
 
-
-import models.Investor;
-
-
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Common {
 
-    protected Investor investor = new Investor();
+    String nameSurname = "Ozoliņš Janis";
+    String phoneNumber = "+793512345678";
+    String email = "fakemail@gmail.com";
+    String message = "random text";
+    String password = "fakepassword";
 
     public void moveToNextBlock(long time) {
         try {
