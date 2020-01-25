@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.switchTo;
@@ -14,14 +15,6 @@ public class Common {
     String email = "fakemail@gmail.com";
     String message = "random text";
     String password = "fakepassword";
-
-    public void moveToNextBlock(long time) {
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 
     public void pageValidationInNewTab(String title) {
         switchTo().window(1);

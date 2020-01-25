@@ -12,14 +12,13 @@ public class HomePage extends Common {
 
     //    Header Elements
     private SelenideElement headerText = $(".main__cont .heading-1"),
-            moreButton = $(".landingArrow"),
             loginButton = $(".header__dashboardBtn"),
             loginFormEmail = $("#login_form_email"),
             loginFormPassword = $("#login_form_password"),
             enter = $("#login_form_enter");
 
     //    first block elements
-    private SelenideElement firstTextBlock = $(".about.animate .heading-1"),
+    private SelenideElement firstTextBlock = $(".about__cont .heading-1"),
             moreInfo = $(".about__cont .heading-2"),
             newsTimeLine = $(".newsTimeline"),
             newsButton = $(".btnNews a"),
@@ -61,8 +60,6 @@ public class HomePage extends Common {
     public void headerCheck() {
         open("/");
         headerText.shouldBe(visible).shouldHave(text("Ecofinance — инновационная финансовая компания"));
-        moreButton.click();
-        moveToNextBlock(3000);
     }
 
     public void firstBlockCheck() {
