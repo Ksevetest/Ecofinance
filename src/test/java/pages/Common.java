@@ -1,8 +1,11 @@
 package pages;
 
+import com.codeborne.selenide.Selenide;
+
 import static com.codeborne.selenide.Selenide.closeWindow;
 import static com.codeborne.selenide.Selenide.switchTo;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class Common {
 
@@ -20,35 +23,16 @@ public class Common {
         }
     }
 
-    public void validationByTitle(String title) {
-        if (getWebDriver().getTitle().contains(title))
-            //Pass
-            System.out.println("# Page title contain expected text");
-        else
-            //Fail
-            System.out.println("# Page title doesn't contain expected text");
-    }
-
     public void pageValidationInNewTab(String title) {
         switchTo().window(1);
-        if (getWebDriver().getTitle().contains(title))
-            //Pass
-            System.out.println("# Page title contain expected text");
-        else
-            //Fail
-            System.out.println("# Page title doesn't contain expected text");
+        assertThat(Selenide.title()).isEqualTo(title);
         closeWindow();
         switchTo().window(0);
     }
 
     public void pageValidationInNewTabByLink(String link) {
         switchTo().window(1);
-        if (getWebDriver().getCurrentUrl().contains(link))
-            //Pass
-            System.out.println("# Page Link is correct");
-        else
-            //Fail
-            System.out.println("# Page Link isn't correct");
+        assertThat(getWebDriver().getCurrentUrl()).contains(link);
         closeWindow();
         switchTo().window(0);
     }
