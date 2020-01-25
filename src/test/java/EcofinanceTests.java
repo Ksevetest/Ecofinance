@@ -1,5 +1,5 @@
 import com.codeborne.selenide.Configuration;
-import org.junit.AfterClass;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import pages.HomePage;

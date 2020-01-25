@@ -1,9 +1,11 @@
 package pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class HomePage extends Common {
@@ -65,8 +67,7 @@ public class HomePage extends Common {
 
     public void firstBlockCheck() {
         firstTextBlock.shouldHave(text("Компания с философией Fintech"));
-        moreInfo.shouldHave(text("Мы развиваем и внедряем высокотехнологичные продукты онлайн-кредитования,\n" +
-                "предоставляя дружественный сервис европейского уровня."));
+        moreInfo.shouldHave(text("Мы развиваем и внедряем высокотехнологичные продукты онлайн-кредитования,\n" + "предоставляя дружественный сервис европейского уровня."));
         newsTimeLine.shouldBe(visible);
         newsButton.click();
         newsMainHeading.shouldBe(visible);
@@ -93,7 +94,7 @@ public class HomePage extends Common {
     public void fifthBlockCheck() {
         forInvestors.shouldHave(text("Информация инвесторам"));
         learnMore.click();
-        validationByTitle("Инвестиции в МФО - МФК Экофинанс, сделать вложение денег в микрофинансовые организации");
+        assertThat(Selenide.title()).isEqualTo("Инвестиции в МФО - МФК Экофинанс, сделать вложение денег в микрофинансовые организации");
         back();
     }
 
