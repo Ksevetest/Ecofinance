@@ -26,4 +26,23 @@ public class EcofinanceTests {
         homePage.footerLinks();
         homePage.login();
     }
+
+    @Test
+    public void mainPageTextValidation (){
+        homePage.openPage();
+        homePage.textValidation();
+    }
+
+    @Test
+    public void mainPageLinkValidation (){
+        homePage.openPage();
+        homePage.linkValidation();
+    }
+
+    @Test
+    public void mainPageInputValidation (){
+        homePage.openPage();
+        homePage.inputValidation();
+        homePage.login();
+    }
 }

@@ -116,6 +116,48 @@ public class HomePage extends Common {
         pageValidationInNewTabByLink("/svidetelstvo_na_tz_ecofinance.pdf");
     }
 
+    public void textValidation (){
+        headerText.shouldBe(visible).shouldHave(text("Ecofinance — инновационная финансовая компания"));
+        firstTextBlock.shouldHave(text("Компания с философией Fintech"));
+        moreInfo.shouldHave(text("Мы развиваем и внедряем высокотехнологичные продукты онлайн-кредитования,\n" + "предоставляя дружественный сервис европейского уровня."));
+        secondTextBlock.shouldHave(text("Наши проекты"));
+        benefitsHeading.shouldHave(text("Залог нашего успеха —\n" + "опыт и знания"));
+        mainPartner.shouldHave(text("Стратегический партнёр"));
+        forInvestors.shouldHave(text("Информация инвесторам"));
+    }
+
+    public void linkValidation (){
+        newsTimeLine.shouldBe(visible);
+        newsButton.click();
+        newsMainHeading.shouldBe(visible);
+        back();
+        creditPlusLink.click();
+        pageValidationInNewTab("Онлайн займы, оформить срочно займ онлайн по всей России");
+        partnerLink.click();
+        pageValidationInNewTab("DYNINNO - Business Processes And IT Optimization | Outsourcing");
+        learnMore.click();
+        assertThat(Selenide.title()).isEqualTo("Инвестиции в МФО - МФК Экофинанс, сделать вложение денег в микрофинансовые организации");
+        back();
+        footerHeading.shouldBe(visible);
+        rules.shouldBe(visible).click();
+        pageValidationInNewTabByLink("/ppds-01082018.pdf");
+        privacyPolicy.shouldBe(visible).click();
+        pageValidationInNewTabByLink("/privacy-policy.pdf");
+        certificateChanges.shouldBe(visible).click();
+        pageValidationInNewTabByLink("/izmenenie_k_svidetelstvu_ecofinance.pdf");
+        ecoFinCertificate.shouldBe(visible).click();
+        pageValidationInNewTabByLink("/svidetelstvo_na_tz_ecofinance.pdf");
+    }
+
+    public void inputValidation (){
+        contactUs.shouldBe(visible);
+        contact_field.val(nameSurname);
+        phoneNumber_field.val(phoneNumber);
+        email_field.val(email);
+        comment_field.val(message);
+    }
+
+
     public void login() {
         loginButton.click();
         loginFormEmail.val(email);
