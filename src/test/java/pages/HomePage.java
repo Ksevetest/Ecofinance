@@ -15,7 +15,8 @@ public class HomePage extends Common {
             loginButton = $(".header__dashboardBtn"),
             loginFormEmail = $("#login_form_email"),
             loginFormPassword = $("#login_form_password"),
-            enter = $("#login_form_enter");
+            enter = $("#login_form_enter"),
+            closeLoginPopUp = $("#dashboard_popup .closePopup");
 
     //    first block elements
     private SelenideElement firstTextBlock = $(".about__cont .heading-1"),
@@ -57,66 +58,7 @@ public class HomePage extends Common {
             certificateChanges = $(".footer__about div:nth-child(4) p:nth-child(1)"),
             ecoFinCertificate = $(".footer__about div:nth-child(4) p:nth-child(2)");
 
-    public void headerCheck() {
-        open("/");
-        headerText.shouldBe(visible).shouldHave(text("Ecofinance — инновационная финансовая компания"));
-    }
-
-    public void firstBlockCheck() {
-        firstTextBlock.shouldHave(text("Компания с философией Fintech"));
-        moreInfo.shouldHave(text("Мы развиваем и внедряем высокотехнологичные продукты онлайн-кредитования,\n" + "предоставляя дружественный сервис европейского уровня."));
-        newsTimeLine.shouldBe(visible);
-        newsButton.click();
-        newsMainHeading.shouldBe(visible);
-        back();
-    }
-
-    public void secondBlockCheck() {
-        secondTextBlock.shouldHave(text("Наши проекты"));
-        creditPlusLink.click();
-        pageValidationInNewTab("Онлайн займы, оформить срочно займ онлайн по всей России");
-    }
-
-    public void thirdBlockCheck() {
-        benefits.shouldBe(visible);
-        benefitsHeading.shouldHave(text("Залог нашего успеха —\n" + "опыт и знания"));
-    }
-
-    public void fourthBlockCheck() {
-        mainPartner.shouldHave(text("Стратегический партнёр"));
-        partnerLink.click();
-        pageValidationInNewTab("DYNINNO - Business Processes And IT Optimization | Outsourcing");
-    }
-
-    public void fifthBlockCheck() {
-        forInvestors.shouldHave(text("Информация инвесторам"));
-        learnMore.click();
-        assertThat(Selenide.title()).isEqualTo("Инвестиции в МФО - МФК Экофинанс, сделать вложение денег в микрофинансовые организации");
-        back();
-    }
-
-    public void sixthAndSeventhBlockCheck() {
-        teamExperience.shouldHave(text("Синергия разностороннего опыта"));
-        contactUs.shouldBe(visible);
-        contact_field.val(nameSurname);
-        phoneNumber_field.val(phoneNumber);
-        email_field.val(email);
-        comment_field.val(message);
-    }
-
-    public void footerLinks() {
-        footerHeading.shouldBe(visible);
-        rules.shouldBe(visible).click();
-        pageValidationInNewTabByLink("/ppds-01082018.pdf");
-        privacyPolicy.shouldBe(visible).click();
-        pageValidationInNewTabByLink("/privacy-policy.pdf");
-        certificateChanges.shouldBe(visible).click();
-        pageValidationInNewTabByLink("/izmenenie_k_svidetelstvu_ecofinance.pdf");
-        ecoFinCertificate.shouldBe(visible).click();
-        pageValidationInNewTabByLink("/svidetelstvo_na_tz_ecofinance.pdf");
-    }
-
-    public void textValidation (){
+    public void textValidation() {
         headerText.shouldBe(visible).shouldHave(text("Ecofinance — инновационная финансовая компания"));
         firstTextBlock.shouldHave(text("Компания с философией Fintech"));
         moreInfo.shouldHave(text("Мы развиваем и внедряем высокотехнологичные продукты онлайн-кредитования,\n" + "предоставляя дружественный сервис европейского уровня."));
@@ -126,7 +68,7 @@ public class HomePage extends Common {
         forInvestors.shouldHave(text("Информация инвесторам"));
     }
 
-    public void linkValidation (){
+    public void linkValidation() {
         newsTimeLine.shouldBe(visible);
         newsButton.click();
         newsMainHeading.shouldBe(visible);
@@ -149,7 +91,7 @@ public class HomePage extends Common {
         pageValidationInNewTabByLink("/svidetelstvo_na_tz_ecofinance.pdf");
     }
 
-    public void inputValidation (){
+    public void inputValidation() {
         contactUs.shouldBe(visible);
         contact_field.val(nameSurname);
         phoneNumber_field.val(phoneNumber);
@@ -163,5 +105,6 @@ public class HomePage extends Common {
         loginFormEmail.val(email);
         loginFormPassword.val(password);
         enter.click();
+        closeLoginPopUp.click();
     }
 }

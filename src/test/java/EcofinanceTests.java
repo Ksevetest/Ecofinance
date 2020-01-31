@@ -4,7 +4,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import pages.HomePage;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class EcofinanceTests {
+
     private HomePage homePage = new HomePage();
 
     @BeforeClass
@@ -12,37 +15,23 @@ public class EcofinanceTests {
         Configuration.baseUrl = "https://ecofinance.ru";
         Configuration.startMaximized = true;
         Configuration.browser = "chrome";
+        open("/");
     }
 
     @Test
-    public void mainPageTests() {
-        homePage.headerCheck();
-        homePage.firstBlockCheck();
-        homePage.secondBlockCheck();
-        homePage.thirdBlockCheck();
-        homePage.fourthBlockCheck();
-        homePage.fifthBlockCheck();
-        homePage.sixthAndSeventhBlockCheck();
-        homePage.footerLinks();
-        homePage.login();
-    }
-
-    @Test
-    public void mainPageTextValidation (){
-        homePage.openPage();
+    public void mainPageTextValidation() {
         homePage.textValidation();
     }
 
     @Test
-    public void mainPageLinkValidation (){
-        homePage.openPage();
+    public void mainPageLinkValidation() {
         homePage.linkValidation();
     }
 
     @Test
-    public void mainPageInputValidation (){
-        homePage.openPage();
+    public void mainPageInputValidation() {
         homePage.inputValidation();
         homePage.login();
     }
+
 }

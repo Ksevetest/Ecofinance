@@ -14,9 +14,6 @@ public class Common {
     String message = "random text";
     String password = "fakepassword";
 
-    public void openPage () {
-        open("/");
-    }
 
     public void pageValidationInNewTab(String title) {
         switchTo().window(1);
