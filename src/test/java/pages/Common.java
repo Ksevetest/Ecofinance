@@ -1,10 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selenide.closeWindow;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,6 +13,7 @@ public class Common {
     String email = "fakemail@gmail.com";
     String message = "random text";
     String password = "fakepassword";
+
 
     public void pageValidationInNewTab(String title) {
         switchTo().window(1);
