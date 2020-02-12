@@ -1,20 +1,23 @@
 import com.codeborne.selenide.Configuration;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import pages.HomePage;
+import pages.InvestPage;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class EcofinanceTests {
 
     private HomePage homePage = new HomePage();
+    private InvestPage investPage = new InvestPage();
 
-    @BeforeClass
-    public static void setup() {
+    @Before
+    public void setup() {
         Configuration.baseUrl = "https://ecofinance.ru";
-        Configuration.startMaximized = true;
+//        Configuration.startMaximized = true;
         Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
         open("/");
     }
 
@@ -34,4 +37,9 @@ public class EcofinanceTests {
         homePage.login();
     }
 
+    @Test
+    public void investPageInputValidation (){
+        investPage.contactUsInputValidation();
+        investPage.getPresentationInputValidation();
+    }
 }

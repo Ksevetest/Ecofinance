@@ -10,49 +10,45 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomePage extends Common {
 
-    //    Header Elements
+    //      Header Elements
     private SelenideElement headerText = $(".main__cont .heading-1"),
             loginButton = $(".header__dashboardBtn"),
             loginFormEmail = $("#login_form_email"),
             loginFormPassword = $("#login_form_password"),
             enter = $("#login_form_enter"),
-            closeLoginPopUp = $("#dashboard_popup .closePopup");
+            closeLoginPopUp = $("#dashboard_popup .closePopup"),
 
-    //    first block elements
-    private SelenideElement firstTextBlock = $(".about__cont .heading-1"),
+    //      first block elements
+            firstTextBlock = $(".about__cont .heading-1"),
             moreInfo = $(".about__cont .heading-2"),
             newsTimeLine = $(".newsTimeline"),
             newsButton = $(".btnNews a"),
-            newsMainHeading = $(".newsArchive__mainHeading");
+            newsMainHeading = $(".newsArchive__mainHeading"),
 
-    //    second block elements
-    private SelenideElement secondTextBlock = $(".projects__leftWrap .heading-1"),
-            creditPlusLink = $(".projects__asideRight span");
+    //      second block elements
+            secondTextBlock = $(".projects__leftWrap .heading-1"),
+            creditPlusLink = $(".projects__asideRight span"),
 
-    //    third block elements
-    private SelenideElement benefits = $(".common__cont--benefit"),
-            benefitsHeading = $(".common__cont.common__cont--benefit .heading-1");
+    //      third block elements
+            benefitsHeading = $(".common__cont.common__cont--benefit .heading-1"),
 
-    //    fourth block elements
-    private SelenideElement mainPartner = $(".common__cont--partners .heading-1"),
-            partnerLink = $(".common--partners span.gr_link");
+    //      fourth block elements
+            mainPartner = $(".common__cont--partners .heading-1"),
+            partnerLink = $(".common--partners span.gr_link"),
 
-    //    fifth block elements
-    private SelenideElement forInvestors = $("section:nth-child(8) .common__cont .heading-1"),
-            learnMore = $(".btnTransparent--investors");
+    //      fifth block elements
+            forInvestors = $("section:nth-child(8) .common__cont .heading-1"),
+            learnMore = $(".btnTransparent--investors"),
 
-    //    sixth block elements
-    private SelenideElement teamExperience = $(".team div:nth-child(1) > div.heading-1");
-
-    //    seventh block elements
-    private SelenideElement contactUs = $(".contacts__cont .heading-1"),
+    //      seventh block elements
+            contactUs = $(".contacts__cont .heading-1"),
             contact_field = $("#main_contact_form_name"),
             phoneNumber_field = $("#main_contact_form_phone"),
             email_field = $("#main_contact_form_email"),
-            comment_field = $("#main_contact_form_msg");
+            comment_field = $("#main_contact_form_msg"),
 
-    //    footer elements
-    private SelenideElement footerHeading = $(".footer__heading"),
+    //      footer elements
+            footerHeading = $(".footer__heading"),
             rules = $(".footer__files--firstBlock p:nth-child(1)"),
             privacyPolicy = $(".footer__files--firstBlock p:nth-child(2)"),
             certificateChanges = $(".footer__about div:nth-child(4) p:nth-child(1)"),
