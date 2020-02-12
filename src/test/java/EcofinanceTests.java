@@ -1,6 +1,6 @@
 import com.codeborne.selenide.Configuration;
 
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import pages.HomePage;
 import pages.InvestPage;
@@ -12,8 +12,8 @@ public class EcofinanceTests {
     private HomePage homePage = new HomePage();
     private InvestPage investPage = new InvestPage();
 
-    @BeforeClass
-    public static void setup() {
+    @Before
+    public void setup() {
         Configuration.baseUrl = "https://ecofinance.ru";
 //        Configuration.startMaximized = true;
         Configuration.browser = "chrome";

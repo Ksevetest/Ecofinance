@@ -38,6 +38,5 @@ public class InvestPage extends Common {
         popUpEmail_field.val(email);
         popupCheckBox.shouldBe(visible).click();
         investPromoCloseBtn.shouldBe(visible).click();
-//        back();
     }
 }
