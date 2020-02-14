@@ -38,8 +38,13 @@ public class EcofinanceTests {
     }
 
     @Test
-    public void investPageInputValidation (){
+    public void investPageInputValidation(){
         investPage.contactUsInputValidation();
         investPage.getPresentationInputValidation();
+    }
+
+    @Test
+    public void investPageLinkValidation(){
+        investPage.reportLinksValidation();
     }
 }
